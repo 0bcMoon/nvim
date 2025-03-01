@@ -1,0 +1,23 @@
+{
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "path": "./cpp.json",
+                "language": [
+                    "cpp"
+                ]
+            },
+            {
+                "path": "./lua.json",
+                "language": [
+                    "lua"
+                ]
+            }
+        ]
+    },
+    "author": "icMoon",
+    "name": "nvim-snippets"
+}

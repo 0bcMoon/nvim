@@ -54,8 +54,6 @@ function M.config()
 
 	local servers = {
 		"lua_ls",
-		"cssls",
-		"html",
 		"jsonls",
 		"clangd",
 		"jdtls",
@@ -72,7 +70,7 @@ function M.config()
 				{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
 			},
 		},
-		virtual_text = false,
+		virtual_text = true,
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,

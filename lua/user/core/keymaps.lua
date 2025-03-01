@@ -28,9 +28,6 @@ keymap("v", ">", ">gv", opts)
 
 keymap("x", "p", [["_dP]])
 
-vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]]
-vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
--- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
 
 keymap("n", "vv", "V", opts)
 keymap("n", "<leader>q", ":q<cr>", opts)
@@ -44,3 +41,6 @@ keymap({ "n", "x" }, "j", "gj", opts)
 keymap({ "n", "x" }, "k", "gk", opts)
 
 vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
+
+vim.keymap.set("n", "<PageUp>", ":cprev<CR>", { silent = true })
+vim.keymap.set("n", "<PageDown>", ":cnext<CR>", { silent = true })

@@ -1,6 +1,5 @@
-require ("user.core.options")
-require ("user.core.keymaps")
-require ("user.core.autocmds")
-require("user.lazy")
+require ("user.core")
 require("user.telescop")
+require("user.autocmds")
+require("user.keymap")
 

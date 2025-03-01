@@ -1,0 +1,233 @@
+{
+	"cp-extension": {
+		"prefix": [
+			"cpp-cp"
+		],
+		"body": [
+			"#include <iostream>",
+			"#include <vector>",
+			"#ifdef DEBUG",
+			"#include \"debug.hpp\"",
+			"#endif /* DEBUG */",
+			"#ifndef DEBUG",
+			"#define dbg(...) ",
+			"#endif // /* DEBUG */",
+			"using ll = long long;",
+			"using lpair = std::pair<ll, ll>;",
+			"using ipair = std::pair<int, int>;",
+			"#define all(a) (a).begin(), (a).end()",
+			"#define sz(a) (int)(a).size()",
+			"void solve()",
+			"{",
+			"\t$1",
+			"}",
+			"int main()",
+			"{",
+			"\tstd::ios_base::sync_with_stdio(false);",
+			"\tstd::cin.tie(NULL);",
+			"\tint t;",
+			"\tstd::cin >> t;",
+			"\tint n = t;",
+			"\twhile (t--)",
+			"\t{",
+			"#ifdef DEBUG",
+			"\t\tstd::cerr << \"#Case \" << n - t << \" -------------------\\n\";",
+			"#endif // DEBUG",
+			"\t\tsolve();",
+			"\t}",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "Default cpp code for CP"
+	},
+	"Header protection": {
+		"prefix": "ifndef",
+		"body": [
+			"#ifndef ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H",
+			"# define ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H",
+			"$2",
+			"",
+			"#endif"
+		],
+		"description": "Log output to console"
+	},
+	"Orthodox Canonical": {
+		"prefix": "makeclass",
+		"body": [
+			"class ${TM_FILENAME_BASE/(.*)/${1:/upcase}/}",
+			"{",
+			"public:",
+			"\t${TM_FILENAME_BASE/(.*)/${1:/upcase}/}();",
+			"\t${TM_FILENAME_BASE/(.*)/${1:/upcase}/}(${TM_FILENAME_BASE/(.*)/${1:/upcase}/} &${TM_FILENAME_BASE/(.*)/${1:/uppcase}/});",
+			"};"
+		],
+		"description": "Log output to console"
+	},
+	"vector": {
+		"prefix": "vec",
+		"body": [
+			"std::vector<${1:int}> ${2:a}(${3:n});"
+		],
+		"description": "vector"
+	},
+	"umap": {
+		"prefix": "map",
+		"body": [
+			"std::map<${1:int}, ${2:int}> ${3:map};"
+		],
+		"description": "vector"
+	},
+	"uset": {
+		"prefix": "set",
+		"body": [
+			"std::set<${1:int}> ${2:set};"
+		]
+	},
+	"sort": {
+		"prefix": "sort",
+		"body": [
+			"std::sort(${1:vec}.begin(), ${1:vec}.end());"
+		]
+	},
+	"ifor": {
+		"prefix": "ifor",
+		"body": [
+			"for(int ${1:i} = 0; ${1} < ${2:n};${1}++)",
+			"{",
+			"$3",
+			"}"
+		],
+		"description": "set"
+	},
+	"rvec": {
+		"prefix": "rvec",
+		"body": [
+			"for(auto &it : ${1:vec}) std::cin >> it;"
+		],
+		"description": "read fix size vector"
+	},
+	"print vector": {
+		"prefix": "pvec",
+		"body": [
+			"for (auto &${1:it} : ${2:vec}) std::cout << ${1} << ' ';",
+			"std::cout << std::endl;"
+		],
+		"description": "print vector"
+	},
+	"sort vector": {
+		"prefix": "svec",
+		"body": [
+			"std::sort(${1:vec}.begin(), ${1}.end());"
+		],
+		"description": "sort vector"
+	},
+	"Class template on Orthodox Canonical Form": {
+		"prefix": "addheader",
+		"body": [
+			"class ${TM_FILENAME_BASE}",
+			"{",
+			"\tpublic:",
+			"\t\t${TM_FILENAME_BASE}();",
+			"\t\t~${TM_FILENAME_BASE}();",
+			"\t\t${TM_FILENAME_BASE}(const ${TM_FILENAME_BASE} &other);",
+			"\t\t${TM_FILENAME_BASE}& operator=(const ${TM_FILENAME_BASE} &other);",
+			"};"
+		],
+		"description": "Class template on Orthodox Canonical Form"
+	},
+	"Class template on Orthodox Canonical Form src": {
+		"prefix": "addsrc",
+		"body": [
+			"#include \"${TM_FILENAME_BASE}.hpp\"",
+			"",
+			"${TM_FILENAME_BASE}::${TM_FILENAME_BASE}()",
+			"{",
+			"}",
+			"",
+			"${TM_FILENAME_BASE}::${TM_FILENAME_BASE}(const ${TM_FILENAME_BASE} &other)",
+			"{",
+			"\t*this = other;",
+			"}",
+			"",
+			"${TM_FILENAME_BASE} &${TM_FILENAME_BASE}::operator=(const ${TM_FILENAME_BASE} &other)",
+			"{",
+			"\tif (this == &other)",
+			"\t\treturn(*this);",
+			"\treturn(*this);",
+			"}",
+			"",
+			"${TM_FILENAME_BASE}::~${TM_FILENAME_BASE}()",
+			"{",
+			"}"
+		],
+		"description": "Class template on Orthodox Canonical Form src"
+	},
+	"codeforces debug": {
+		"prefix": "cpdebug",
+		"body": [
+			"using namespace std;",
+			"#include <set>",
+			"#include <map>",
+			"#ifdef DEBUG",
+			"// A debug macro for single or multiple arguments",
+			"// Overloads for printing containers",
+			"template<typename T>",
+			"ostream& operator<<(ostream& os, const vector<T>& v) {",
+			"    os << \"[\";",
+			"    for (int i = 0; i < (int)v.size(); i++) {",
+			"        if (i > 0) os << \", \";",
+			"        os << v[i];",
+			"    }",
+			"    os << \"]\";",
+			"    return os;",
+			"}",
+			"",
+			"template<typename T>",
+			"ostream& operator<<(ostream& os, const set<T>& s) {",
+			"    os << \"{\";",
+			"    for (auto it = s.begin(); it != s.end(); ++it) {",
+			"        if (it != s.begin()) os << \", \";",
+			"        os << *it;",
+			"    }",
+			"    os << \"}\";",
+			"    return os;",
+			"}",
+			"",
+			"template<typename K, typename V>",
+			"ostream& operator<<(ostream& os, const pair<K, V>& p) {",
+			"    os << \"(\" << p.first << \", \" << p.second << \")\";",
+			"    return os;",
+			"}",
+			"",
+			"template<typename K, typename V>",
+			"ostream& operator<<(ostream& os, const map<K, V>& m) {",
+			"    os << \"{\";",
+			"    for (auto it = m.begin(); it != m.end(); ++it) {",
+			"        if (it != m.begin()) os << \", \";",
+			"        os << it->first << \": \" << it->second;",
+			"    }",
+			"    os << \"}\";",
+			"    return os;",
+			"}",
+			"#define dbg(...) cerr << \"(\" << #__VA_ARGS__ << \"): \", debug_out(__VA_ARGS__)",
+			"",
+			"template<typename T>",
+			"void debug_out(const T& value) {",
+			"    cerr << value << \"\\n\";",
+			"}",
+			"",
+			"template<typename T, typename... Args>",
+			"void debug_out(const T& first, const Args&... rest) {",
+			"    cerr << first << \" \";",
+			"    debug_out(rest...);",
+			"}",
+			"",
+			"#endif",
+			"#ifndef DEBUG",
+			"#define dbg(...) ",
+			"#endif",
+			""
+		],
+		"description": "codeforces debug"
+	}
+}

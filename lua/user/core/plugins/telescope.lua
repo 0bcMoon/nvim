@@ -4,8 +4,6 @@ local M = {
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
         "nvim-lua/plenary.nvim",
     },
-    -- lazy = true,
-    cmd = "Telescope",
 }
 
 function M.config()
@@ -60,6 +58,7 @@ function M.config()
             find_files = {
                 theme = "dropdown",
                 previewer = false,
+                -- initial_mode = "normal",
             },
 
             buffers = {

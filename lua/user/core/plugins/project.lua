@@ -12,8 +12,8 @@ function M.config()
     patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
     ignore_lsp = {},
     exclude_dirs = {},
-    show_hidden = false,
-    silent_chdir = true,
+    show_hidden = true,
+    silent_chdir = false,
     scope_chdir = "global",
   }
 
