@@ -229,5 +229,12 @@
 			""
 		],
 		"description": "codeforces debug"
+	},
+	"simple print": {
+		"prefix": "cout",
+		"body": [
+            "std::cout << $1 << '\\n';"
+		],
+		"description": "Log output to console"
 	}
 }
